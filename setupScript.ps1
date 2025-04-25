@@ -7,7 +7,8 @@ Set-ItemProperty -Path HKCU:\software\microsoft\windows\currentversion\explorer\
 New-Item -Path 'HKCU:\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32' -Force | Out-Null
 New-ItemProperty -Path 'HKCU:\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32' -Name '(default)' -Value '' -PropertyType String -Force # Disable Windows 11 context menu
 
-
+# Disable BitLocker on C:
+Disable-BitLocker -MountPoint "C:"
 
 ### Package Installations ###
 
