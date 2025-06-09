@@ -1,3 +1,15 @@
+# Elevate if needed
+If (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
+    Start-Process powershell "-ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
+    Exit
+}
+
+# Define where to save the main installer script
+$publicDesktopPath = "C:\Users\Public\Desktop"
+$installerScriptPath = Join-Path $publicDesktopPath "setupScript.ps1"
+
+# Define the script content
+$installerScriptContent = @'
 ########################################
 # Auto-elevate the script as Administrator
 ########################################
@@ -210,3 +222,12 @@ Start-Process notepad.exe $installLogPath
 
 # Open the summary
 Start-Process notepad.exe $summaryPath
+'@
+
+# Save the installer script
+Set-Content -Path $installerScriptPath -Value $installerScriptContent -Force -Encoding UTF8
+
+Write-Output "Installer script created at: $installerScriptPath"
+
+# Run the installer script
+Start-Process powershell "-ExecutionPolicy Bypass -File `"$installerScriptPath`"" -Verb RunAs
