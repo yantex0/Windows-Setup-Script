@@ -1,0 +1,2 @@
+freshImage-ScriptCreation.ps1 is a working copy of a script that makes the powershell script on new installs but requires manually updating the script.
+Have made it auto generate the same file by using WrapSetupScript.ps1 which takes the setupScript.ps1 and add a header and footer
