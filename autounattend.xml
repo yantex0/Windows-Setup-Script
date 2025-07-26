@@ -344,7 +344,7 @@ $logfile = 'C:\Windows\Setup\Scripts\RemoveFeatures.log';
 			&lt;sharedKey&gt;
 				&lt;keyType&gt;passPhrase&lt;/keyType&gt;
 				&lt;protected&gt;false&lt;/protected&gt;
-				&lt;keyMaterial&gt;AFakePassword&lt;/keyMaterial&gt;
+				&lt;keyMaterial&gt;kindvase961&lt;/keyMaterial&gt;
 			&lt;/sharedKey&gt;
 		&lt;/security&gt;
 	&lt;/MSM&gt;

@@ -1,5 +1,5 @@
 $SourceScriptPath = Join-Path $PSScriptRoot "setupScript.ps1"
-$OutputScriptPath = Join-Path $PSScriptRoot "GeneratedFreshImage-ScriptCreation.ps1"
+$OutputScriptPath = Join-Path $PSScriptRoot "ScriptforAutounattend.ps1"
 
 # Step 1: define header, carefully breaking up the nested here-string start delimiter
 $header = @'
